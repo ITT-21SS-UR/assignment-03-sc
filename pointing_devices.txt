@@ -1,0 +1,30 @@
+3.6
+a) Which advantages do direct pointing devices have over indirect pointing devices? 
+    Name one use case where using a direct pointing device would not make any sense.
+
+With a direct pointing device you immediately know which position you selected (it is at the position that you selected).
+With a indirect poiting device you would need to see e. g. on screen where your position is (you have to estimate where your position will be after movement and translate the movement onto the screen).
+Another advantage of a direct input device is that you ... TODO
+
+    
+One use case where using a direct pointing device would not make any sense is when ...
+you want to control a really big screen (e. g. for a presentation with a live demo) which is over 3 meters big it is strenuous and not practical
+to directly select an item on the screen. An indirect device would be better in that situation so that you don't need a ladder as a helping tool to make your input. 
+
+################################################################################ 
+
+b) How would you characterize “Shift” based on the classification criteria mentioned in the Wikipedia article?
+
+Shift is a direct input device where you can directly manipulate something (because the on-screen pointer is in the same physical position as the pointing device (e. g. finger or  stylus on a touch screen)). 
+According to Wikipedia Shift adheres to the absolute movement classfication category.
+Also Shift has the position control as a criteria because you can control it with your finger on the touch screen with Shift. 
+Isometric due to pressure (force) on screen.
+Shift has 2 or 3 degrees of freedom. ( because of lifting the finger? (x, y position) X eher weniger and optionally pressure) )???TODO
+TODO The possible states are out of range, dragging, , zooming/and then selecting a zoomed object?
+
+################################################################################ 
+
+c) What is the size of the display used in the study?
+
+The size of the used display in the study is 550 x 730mm.
+
