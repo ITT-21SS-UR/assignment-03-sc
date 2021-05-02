@@ -47,16 +47,6 @@ class Trial(QtWidgets.QWidget):
             number = self.__trial_model.get_random_number()
             q_painter.drawText(event.rect(), QtCore.Qt.AlignCenter, str(number))
 
-    def __handle_start_countdown_state(self):
-        trial_condition = self.__trial_model.get_condition()
-
-        if trial_condition == Condition.SINGLE_STIMULUS:
-            self.__trial_model.set_state(State.SINGLE_STIMULUS)
-
-        elif trial_condition == Condition.MENTAL_DEMAND:
-            self.__trial_model.set_state(State.MENTAL_DEMAND)
-            self.__trial_model.increase_trial_counter()
-
     def paintEvent(self, event):
         q_painter = QtGui.QPainter()
         q_painter.begin(self)
@@ -67,9 +57,6 @@ class Trial(QtWidgets.QWidget):
                           "Press 'space' to start."
 
             self.__draw_text(event, q_painter, description)
-
-        elif trial_state == State.START_COUNTDOWN:
-            self.__handle_start_countdown_state()
 
         elif trial_state == State.SINGLE_STIMULUS:
             self.__draw_circle(q_painter)
