@@ -2,7 +2,7 @@ import sys
 
 from PyQt5 import QtGui, QtWidgets, QtCore
 
-from trial_model import TrialModel
+from trial_model import TrialModel, State, Condition
 
 
 class Trial(QtWidgets.QWidget):
@@ -26,27 +26,75 @@ class Trial(QtWidgets.QWidget):
         self.update()
 
     @staticmethod
-    def __draw_text(event, q_painter):
-        text = "Please press 'space' when the circle appears."
+    def __draw_text(event, q_painter, description: str):
         q_painter.setPen(QtGui.QColor(20, 34, 100))
         q_painter.setFont(QtGui.QFont("Decorative", 18))
-        q_painter.drawText(event.rect(), QtCore.Qt.AlignHCenter, text)
+        q_painter.drawText(event.rect(), QtCore.Qt.AlignCenter, description)
 
     def __draw_circle(self, q_painter):
-        # TODO depending on condition
-        if self.__trial_model.get_circle_state():
+        if self.__trial_model.is_circle_state():
             q_painter.setPen(QtGui.QColor(0, 0, 0))
             q_painter.setBrush(QtGui.QColor(119, 249, 158))  # mint green
-            q_painter.drawEllipse(225, 100, 350, 350)
+            q_painter.drawEllipse(225, 125, 350, 350)
 
-        else:  # TODO start the countdown so that the circle can be shown at a later time
-            self.__trial_model.start_countdown()
+    def __draw_circle_with_number(self, event, q_painter):
+        self.__draw_circle(q_painter)
+
+        if self.__trial_model.is_circle_state():
+            q_painter.setPen(QtGui.QColor(0, 0, 0))  # black
+            q_painter.setFont(QtGui.QFont("Decorative", 150))
+
+            number = self.__trial_model.get_random_number()
+            q_painter.drawText(event.rect(), QtCore.Qt.AlignCenter, str(number))
+
+    def __handle_start_countdown_state(self):
+        trial_condition = self.__trial_model.get_condition()
+
+        if trial_condition == Condition.SINGLE_STIMULUS:
+            self.__trial_model.set_state(State.SINGLE_STIMULUS)
+
+        elif trial_condition == Condition.MENTAL_DEMAND:
+            self.__trial_model.set_state(State.MENTAL_DEMAND)
+            self.__trial_model.increase_trial_counter()
 
     def paintEvent(self, event):
         q_painter = QtGui.QPainter()
         q_painter.begin(self)
-        self.__draw_text(event, q_painter)
-        self.__draw_circle(q_painter)
+
+        trial_state = self.__trial_model.get_state()
+        if trial_state == State.DESCRIPTION_SINGLE_STIMULUS:
+            description = "Please press 'space' when a circle appears.\n" \
+                          "Press 'space' to start."
+
+            self.__draw_text(event, q_painter, description)
+
+        elif trial_state == State.START_COUNTDOWN:
+            self.__handle_start_countdown_state()
+
+        elif trial_state == State.SINGLE_STIMULUS:
+            self.__draw_circle(q_painter)
+
+        elif trial_state == State.DESCRIPTION_MENTAL_DEMAND:
+            description = "Please press 'space' when a circle with the number " \
+                          + str(self.__trial_model.get_correct_number()) \
+                          + " appears.\n" \
+                            "If a circle with another number appears just ignore it.\n" \
+                            "It will disappear from alone.\n" \
+                            "Press 'space' to start."
+
+            self.__draw_text(event, q_painter, description)
+
+        elif trial_state == State.MENTAL_DEMAND:
+            self.__draw_circle_with_number(event, q_painter)
+
+        elif trial_state == State.DESRIPTION_END:
+            description = "You successfully completed the tasks.\n" \
+                          "(≧∇≦)\n" \
+                          "Thank you for your participation.\n" \
+                          "To start a new study press 'space'"
+
+            self.__draw_text(event, q_painter, description)
+
         q_painter.end()
 
     def keyPressEvent(self, event):
@@ -54,11 +102,6 @@ class Trial(QtWidgets.QWidget):
 
 
 if __name__ == '__main__':
-    # from datetime import datetime
-    # __start_time = datetime.now()
-    # test_time = datetime.now()
-    # print((__start_time - test_time).total_seconds() * 1000)
-
     app = QtWidgets.QApplication(sys.argv)
     trial = Trial(100)
     sys.exit(app.exec_())

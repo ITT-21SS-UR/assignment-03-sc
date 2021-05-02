@@ -1,75 +1,77 @@
-What does Hornbæk say about the relationship between self-reported and objectively measured task performance?
+What does Hornbæk say about the relationship between self-reported and 
+objectively measured task performance?
 
-Hornbæk found out that the users perception of outcomes did not correlate with actual measured outcomes.
+Hornbæk found out that the users perception of outcomes did not correlate with 
+actual measured outcomes.
+The participants understanding of the task is relevant to the task performance 
+because if a participant can't understand the task, his/her performance is 
+probably going to be a lot different and to be of little value to the 
+researcher. 
 
-##############
-Deciding between these approaches is hard. On the one hand, repre-
-sentative tasks may contain irrelevant elements and may lead to greater
-variation in performance; hypotheses may also concern only a part of
-such tasks. On the other hand, using simple tasks requires an argu-
-mentation for why they are relevant for real work (for instance like
-the one by Dragicevic et al. quoted above). O
- S. 35
- Finally, participants’ understanding of tasks and their involvement
-in the experimental situation are important to all studies. 
-If participants do not understand the task, their performance is likely to vary
-a lot and to be of little value to the experimenter. 
-Some researchers
-maintain that understanding tasks implies being aware of the criteria
-for evaluating performance. In many studies on pointing, for instance,
-this has lead to researchers to instruct participants to “work as fast
-as possible while still maintaining high accuracy” [31, p. 217]. Others
-maintain that experimental realism — the extent to which participants
-experience the experiment as meaningful and involving — is key to
-useful insights. Experimenters can try to achieve the above by pilot
-testing, careful debriefings that elicit participants’ view of the experi-
-ments, clear instructions, and intrinsically motivating tasks.
+###
+p. 35
+Some researchers maintain that understanding tasks implies being aware of the 
+criteria for evaluating performance. 
 
- Hassenzahl [59, p. 9] argued that subjective and
-objective qualities are fundamentally different:
+Hassenzahl argued that subjective and objective qualities are 
+fundamentally different:
 
-    Experience is subjective. It emerges through situations, objects, people, their interrelationships, and their
-    relationship to the experientor, but it is created and remains in her or his head. Given that, it may be not
-One way to use these results is to assume that dimensions of the usabil-
-ity construct are relatively independent and to collect measures on all
-dimensions
-
+    Experience is subjective. It emerges through situations, objects, people, 
+    their interrelationships, and their relationship to the experientor, but it 
+    is created and remains in her or his head...
 
 ################################################################################
 
 Describe advantages and limitations of research hypotheses.
 
 Several advantages are described in the paper:
-- Hypotheses can help you gain clarity about what you are doing and might help you focus on research questions.
-- They can help you to summarize and think about earlier work or can help you to design and motivate your own experiment. 
+- Hypotheses can help you gain clarity about what you are doing and might help 
+  you focus on research questions.
+- They can help you to summarize and think about earlier work or can help you 
+  to design and motivate your own experiment. 
 - Hypotheses can also serve as support for the report of your experiment. 
 - Furthermore they are bound to theory.
 
 Mentioned drawbacks / limitations of hypotheses are:
-- that a strong argument against the usage of hypotheses is that the reliance on theory may blind you to interesting findings. 
-- Greenwald argued that too often the null hypothesis of an experiment is formulated only to be disconfirmed
-- Greenwald et al. [52] argued that researchers who depend heavily on theory are more likely to revise experiments (e.g., change procedures, predictions, or analysis of data) if finding disconfirming evidence rather than to revise theory.
+- that a strong argument against the usage of hypotheses is that the reliance 
+  on theory may blind you to interesting findings. 
+- Greenwald argued that too often the null hypothesis of an experiment is 
+  formulated only to be disconfirmed.
+- Greenwald et al. [52] argued that researchers who depend heavily on theory 
+  are more likely to revise experiments (e.g., change procedures, predictions, 
+  or analysis of data) if finding disconfirming evidence rather than to revise 
+  theory.
 
 ################################################################################
 
-Is it acceptable to conduct user studies with media informatics students as participants instead of a broad sample of potential
-users? 
+Is it acceptable to conduct user studies with media informatics students as 
+participants instead of a broad sample of potential users? 
 
-In several cases it is acceptable to conduct user studies with them because often they are the only available participants that can be more easiliy recruited especially because of Corona.
+In several cases it is acceptable to conduct user studies with them because 
+often they are the only available participants that can be easiliy 
+recruited (for our course study) especially because of Corona.
+TODO reasons.
 
-
-##
+###
 What are advantages and limitations? 
 
-Not represantative enough; different kinds of study or backgrounds of people are not considered
+Another advantage is that ... TODO
 
-##
+Limitations are that they are not represantative enough.
+Usually different kinds of study or backgrounds of people should be considered.
+
+###
 Name one topic for a user study where it would be problematic to have only
 media informatics students as participants. 
-E. g. if you want to check how adapted/comfortable students are with their PC (Computer Affinität) 
-The media informatic students would have a higher affinity with those devices.
 
-##
+E. g. if you want to check how adapted/comfortable students are with their PC (Computer Affinität) 
+the media informatic students would have a higher affinity with those devices
+therefore different backgrounds and characteristics should be considered.
+
+###
 Name one counter-example. 
-If you want to research how programming beginners cope with certain programming tasks and read code in comparision to more advanved programmers in the same course of study in higher semester or BA versus MA students. 
+
+If you want to research how programming beginners cope with certain programming 
+tasks and read code in comparision to more advanved programmers in the same 
+course of study in higher semester or BA versus MA students. 
 
