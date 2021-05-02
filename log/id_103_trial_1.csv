@@ -1,3 +1,0 @@
-participant_id,condition,shown_stimulus,pressed_key,is_correct_key,reaction_time_in_ms,timestamp,has_circle_appeared,is_correct_reaction
-103,Condition.MENTAL_DEMAND,circle with numbers,32,True,400.434,2021-05-02 20:12:37.560950,True,False
-103,Condition.MENTAL_DEMAND,circle with numbers,32,True,356.508,2021-05-02 20:12:39.425298,True,True
