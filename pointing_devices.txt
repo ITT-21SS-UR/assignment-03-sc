@@ -1,4 +1,6 @@
-3.6
+# Authors of this file are Sarah and Claudia.
+# Everyone did the task separately and Sarah combined the answers together.
+
 a) Which advantages do direct pointing devices have over indirect pointing devices? 
    Name one use case where using a direct pointing device would not make any sense.
 

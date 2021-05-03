@@ -5,6 +5,7 @@ from PyQt5 import QtGui, QtWidgets, QtCore
 from trial_model import TrialModel, State
 
 
+# Author of this file is Claudia.
 class ReactionTimeTrial(QtWidgets.QWidget):
 
     @staticmethod
@@ -63,11 +64,9 @@ class ReactionTimeTrial(QtWidgets.QWidget):
             self.__draw_circle(q_painter)
 
         elif trial_state == State.DESCRIPTION_MENTAL_DEMAND:
-            description = "Please press 'space' when a circle with the number " \
+            description = "Please press 'space' when a circle with the number '" \
                           + str(self.__trial_model.get_correct_number()) \
-                          + " appears.\n" \
-                            "If a circle with another number appears just ignore it.\n" \
-                            "It will disappear from alone.\n" \
+                          + "' appears.\n" \
                             "Press 'space' to start."
 
             self.__draw_text(event, q_painter, description)

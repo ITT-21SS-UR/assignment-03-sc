@@ -8,6 +8,8 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import QObject, pyqtSignal
 
 
+# Main author of this file is Claudia.
+# Sarah optimized the timers together with Claudia (__start_countdown, __show_circle, __on_timeout).
 class State(Enum):
     INIT_CIRCLE = 1
     DESCRIPTION_SINGLE_STIMULUS = 2
@@ -39,6 +41,7 @@ class TrialModel(QObject):
     CIRCLE_APPEARED = "is_circle_shown"
     CIRCLE_COUNTER = "number_of_circles"
     CORRECT_REACTION = "is_correct_reaction"
+    CURRENT_STATE = "current_state"
 
     INVALID_TIME = "NaN"
     MAX_REPETITION_CONDITION = 10
@@ -98,10 +101,13 @@ class TrialModel(QObject):
                       + ".csv"
 
     def __on_timeout(self):
-        if self.__is_circle:
-            self.__hide_circle()
-        else:
-            self.__show_circle()
+        if self.__state == State.SINGLE_STIMULUS \
+                or self.__state == State.MENTAL_DEMAND:
+
+            if self.__is_circle:
+                self.__hide_circle()
+            else:
+                self.__show_circle()
 
     def __hide_circle(self):
         if not self.__is_circle:
@@ -123,8 +129,8 @@ class TrialModel(QObject):
 
         self.data_changed.emit()
 
-        if (self.__state == State.MENTAL_DEMAND) \
-                and (self.__correct_number != self.__current_random_number):
+        if self.__state == State.MENTAL_DEMAND \
+                and self.__correct_number != self.__current_random_number:
             self.__timer.setSingleShot(True)
             self.__timer.start(2000)
 
@@ -143,13 +149,13 @@ class TrialModel(QObject):
         self.data_changed.emit()
 
         self.__timer.setSingleShot(True)
-        # 3 - 6 sec between circle appearance
-        self.__timer.start(random.randint(3000, 6000))
+        # 2 - 5 sec between circle appearance
+        self.__timer.start(random.randint(2000, 5000))
 
     def __is_correct_reaction(self, is_correct_key):
         if self.__is_circle and is_correct_key:
             if self.__state == State.MENTAL_DEMAND \
-                    and (self.__current_random_number != self.__correct_number):
+                    and self.__current_random_number != self.__correct_number:
                 return False
 
             return True
@@ -201,7 +207,8 @@ class TrialModel(QObject):
             self.TIMESTAMP: datetime.now(),
             self.CIRCLE_APPEARED: self.__is_circle,
             self.CIRCLE_COUNTER: self.__circle_counter,
-            self.CORRECT_REACTION: self.__is_correct_reaction(is_correct_key)
+            self.CORRECT_REACTION: self.__is_correct_reaction(is_correct_key),
+            self.CURRENT_STATE: self.__state
         }
 
     def __write_to_csv(self, row_data):
@@ -218,7 +225,8 @@ class TrialModel(QObject):
                 self.TIMESTAMP,
                 self.CIRCLE_APPEARED,
                 self.CIRCLE_COUNTER,
-                self.CORRECT_REACTION
+                self.CORRECT_REACTION,
+                self.CURRENT_STATE
             ])
 
         data_frame = data_frame.append(row_data, ignore_index=True)
@@ -262,8 +270,9 @@ class TrialModel(QObject):
             else:
                 self.__write_to_csv(self.__create_row_data(key_code))
 
-        else:
+        elif self.__state == State.SINGLE_STIMULUS \
+                or self.__state == State.MENTAL_DEMAND:
             self.__write_to_csv(self.__create_row_data(key_code))
-            # log every user input even if it is not a relevant key
+            # log every user input in these states even if it is not a relevant key
             # was done like this because of assignment description
             # to check if the pressed key is correct
