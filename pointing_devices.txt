@@ -4,39 +4,45 @@
 a) Which advantages do direct pointing devices have over indirect pointing devices? 
    Name one use case where using a direct pointing device would not make any sense.
 
-With a direct pointing device you immediately know which position you selected 
-(it is at the position that you selected).
-With an indirect poiting device you would need to see e. g. on screen where your
-position is (you have to estimate where your position will be after movement and
-translate the movement onto the screen).
-Another advantage of a direct input device is that you ... TODO
+With a direct pointing device, you know immediately which position you have selected;
+with an indirect pointing device, you must first find the position of the cursor 
+on the screen.
+
+With a direct pointing device, the movement is transmitted directly to the device, 
+so that the cursor moves on the screen in the same way as the finger. 
+Another advantage of a direct pointing device is that you do not need an 
+additional device, such as a mouse or joystick, usually the device is already 
+equipped with a touchscreen or the like. In contrast, with an indirect pointing 
+device, the movement of the mouse is translated and transferred to the cursor 
+on the screen. This can lead to latencies. 
     
-One use case where using a direct pointing device would not make any sense is 
-when you want to control a really big screen (e. g. for a presentation with a 
-live demo) which is over 3 meters big it is strenuous and not practical to 
-directly select an item on the screen. An indirect device would be better in 
-that situation so that you don't need a ladder as a helping tool to make your 
-input. 
+One use case where direct pointing is not practical would be, 
+when you want to control a very large screen that is difficult to reach 
+(e.g. for a presentation with a live demo). Here it would be very exhausting and 
+impractical to directly select an element on the screen. An indirect device would 
+be more suitable in this situation. 
 
 ################################################################################ 
 
 b) How would you characterize “Shift” based on the classification criteria 
    mentioned in the Wikipedia article?
 
-Shift is a direct input device where you can directly manipulate something 
-(because the on-screen pointer is in the same physical position as the pointing
-device (e. g. finger or  stylus on a touch screen)). 
+Shift is a direct input device where you can directly manipulate the postion of 
+the cursor with your finger. The on-screen pointer is in the same physical position 
+as the pointing device (e. g. finger or  stylus on a touch screen)). 
 According to Wikipedia Shift adheres to the absolute movement classfication 
 category.
-Also Shift has the position control as a criteria because you can control it 
-with your finger on the touch screen with Shift. 
-Isometric due to pressure (force) on screen.
-Shift has 2 or 3 degrees of freedom. ( because of lifting the finger? (x, y position) X eher weniger and optionally pressure) )???TODO
-TODO The possible states are out of range, dragging, , zooming/and then selecting a zoomed object?
+Shift uses position control. The postion of the on-screen pointer is directly changed 
+instead of converting the speed or something like that into a cursor movement. 
+It is an isometric device because the pressure is measured. Shift has two or three 
+degrees of freedom: The x and y position and optionally the pressure.
 
+The possible states are "out of range", "dragging", "tracking" and "zooming" in 
+order to reach smaller object more easily.
 ################################################################################ 
 
 c) What is the size of the display used in the study?
 
-The size of the used display in the study is 550 x 730mm.
+For the study the IPAQ PDA with a size of 550 x 730mm and 240 × 320px was used.
+The effective resolution of the display was 0.436px/mm. 
 
