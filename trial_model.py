@@ -1,3 +1,4 @@
+import os
 import random
 from datetime import datetime
 from enum import Enum
@@ -8,12 +9,12 @@ from PyQt5.QtCore import QObject, pyqtSignal
 
 
 class State(Enum):
-    START_COUNTDOWN = 1
+    INIT_CIRCLE = 1
     DESCRIPTION_SINGLE_STIMULUS = 2
     SINGLE_STIMULUS = 3
     DESCRIPTION_MENTAL_DEMAND = 4
     MENTAL_DEMAND = 5
-    DESRIPTION_END = 6
+    DESCRIPTION_END = 6
 
 
 class Condition(Enum):
@@ -35,13 +36,18 @@ class TrialModel(QObject):
     CORRECT_KEY = "is_correct_key"
     REACTION_TIME = "reaction_time_in_ms"
     TIMESTAMP = "timestamp"
-    CIRCLE_APPEARED = "has_circle_appeared"
+    CIRCLE_APPEARED = "is_circle_shown"
+    CIRCLE_COUNTER = "number_of_circles"
     CORRECT_REACTION = "is_correct_reaction"
 
     INVALID_TIME = "NaN"
-    MAX_REPETITION_CONDITION = 2  # TODO after testing switch to 10
+    MAX_REPETITION_CONDITION = 10
 
     data_changed = pyqtSignal()
+
+    @staticmethod
+    def __is_space_key(key_code):
+        return key_code == QtCore.Qt.Key_Space
 
     @staticmethod
     def __generate_random_number():
@@ -49,7 +55,15 @@ class TrialModel(QObject):
 
     def __init__(self, participant_id):
         super().__init__()
+
+        self.__create_log_directory()
         self.__reset_model(participant_id)
+
+    def __create_log_directory(self):
+        self.__log_directory = "log"
+
+        if not os.path.isdir(self.__log_directory):
+            os.makedirs(self.__log_directory)
 
     def __reset_model(self, participant_id):
         self.__participant_id = participant_id
@@ -60,6 +74,7 @@ class TrialModel(QObject):
         self.__set_condition(Condition.SINGLE_STIMULUS)
         self.__shown_stimulus = ShownStimulus.CIRCLE_APPEARS.value
         self.__repetition_counter = 0
+        self.__circle_counter = 0
 
         self.__correct_number = self.__generate_random_number()
         self.__current_random_number = 0
@@ -70,38 +85,23 @@ class TrialModel(QObject):
         self.__timer = QtCore.QTimer(self)
         self.__timer.timeout.connect(self.__on_timeout)
 
+    def __set_random_number(self):
+        self.__current_random_number = self.__generate_random_number()
+
+    def __set_condition(self, condition):
+        self.__condition = condition
+        self.__update_file()
 
     def __update_file(self):
-        self.__file = "./log/id_" + str(self.__participant_id) \
+        self.__file = "./" + self.__log_directory + "/id_" + str(self.__participant_id) \
                       + "_trial_" + self.__condition.value \
                       + ".csv"
 
-    def get_correct_number(self):
-        return self.__correct_number
-
-    def get_repetion_counter(self):
-        return self.__repetition_counter
-
-    def __calculate_reaction_time(self):
-        try:
-            return (self.__end_time - self.__start_time).total_seconds() * 1000
-            # TODO check if conversion to milliseconds is correct
-        except AttributeError:  # TODO that's not pretty (a misused try except)
-            return self.INVALID_TIME
-        except TypeError:
-            return self.INVALID_TIME
-
-    def get_state(self):
-        return self.__state
-
-    def set_state(self, state):
-        self.__state = state
-
-    def get_participant_id(self):
-        return self.__participant_id
-
-    def is_circle_state(self):
-        return self.__is_circle
+    def __on_timeout(self):
+        if self.__is_circle:
+            self.__hide_circle()
+        else:
+            self.__show_circle()
 
     def __hide_circle(self):
         if not self.__is_circle:
@@ -110,9 +110,11 @@ class TrialModel(QObject):
         self.__is_circle = False
         self.data_changed.emit()
 
-        self.start_countdown()
+        self.__start_countdown()
 
     def __show_circle(self):
+        self.__circle_counter += 1
+
         self.__is_circle = True
         self.__start_time = datetime.now()
 
@@ -126,28 +128,12 @@ class TrialModel(QObject):
             self.__timer.setSingleShot(True)
             self.__timer.start(2000)
 
-    def __on_timeout(self):
-        if self.__is_circle:
-            self.__hide_circle()
-        else:
-            self.__show_circle()
-
-    def __set_condition(self, condition):
-        self.__condition = condition
-        self.__update_file()
-
-    def get_random_number(self):
-        return self.__current_random_number
-
-    def __set_random_number(self):
-        self.__current_random_number = self.__generate_random_number()
-
-    def start_countdown(self):
+    def __start_countdown(self):
         self.__start_time = self.INVALID_TIME
         self.__end_time = self.INVALID_TIME
         self.__is_circle = False
 
-        if self.__state == State.START_COUNTDOWN:
+        if self.__state == State.INIT_CIRCLE:
             if self.__condition == Condition.SINGLE_STIMULUS:
                 self.__state = State.SINGLE_STIMULUS
 
@@ -160,10 +146,6 @@ class TrialModel(QObject):
         # 3 - 6 sec between circle appearance
         self.__timer.start(random.randint(3000, 6000))
 
-    @staticmethod
-    def __is_space_key(key_code):
-        return key_code == QtCore.Qt.Key_Space
-
     def __is_correct_reaction(self, is_correct_key):
         if self.__is_circle and is_correct_key:
             if self.__state == State.MENTAL_DEMAND \
@@ -173,6 +155,38 @@ class TrialModel(QObject):
             return True
 
         return False
+
+    def __handle_repetition_counter(self):
+        if self.__state == State.SINGLE_STIMULUS:
+            self.__repetition_counter += 1
+
+        elif self.__state == State.MENTAL_DEMAND \
+                and self.__correct_number == self.__current_random_number:
+            self.__repetition_counter += 1
+
+        self.__handle_max_repetition()
+
+    def __handle_max_repetition(self):
+        if self.__repetition_counter >= self.MAX_REPETITION_CONDITION:
+            self.__repetition_counter = 0
+
+            if self.__state == State.MENTAL_DEMAND:
+                self.__state = State.DESCRIPTION_END
+            else:
+                self.__state = State.DESCRIPTION_MENTAL_DEMAND
+                self.__shown_stimulus = ShownStimulus.CIRCLE_WITH_NUMBERS.value
+
+    def __reset_study(self):
+        self.__reset_model(self.__participant_id + 1)
+        self.data_changed.emit()
+
+    def __calculate_reaction_time(self):
+        try:
+            return (self.__end_time - self.__start_time).total_seconds() * 1000
+        except AttributeError:
+            return self.INVALID_TIME
+        except TypeError:
+            return self.INVALID_TIME
 
     def __create_row_data(self, key_code):
         is_correct_key = self.__is_space_key(key_code)
@@ -186,42 +200,63 @@ class TrialModel(QObject):
             self.REACTION_TIME: self.__calculate_reaction_time(),
             self.TIMESTAMP: datetime.now(),
             self.CIRCLE_APPEARED: self.__is_circle,
+            self.CIRCLE_COUNTER: self.__circle_counter,
             self.CORRECT_REACTION: self.__is_correct_reaction(is_correct_key)
         }
 
-    def __handle_max_repetition(self):
-        if self.__repetition_counter >= self.MAX_REPETITION_CONDITION:
-            self.__repetition_counter = 0
+    def __write_to_csv(self, row_data):
+        try:
+            data_frame = pd.read_csv(self.__file)
+        except FileNotFoundError:
+            data_frame = pd.DataFrame(columns=[
+                self.PARTICIPANT_ID,
+                self.CONDITION,
+                self.SHOWN_STIMULUS,
+                self.PRESSED_KEY,
+                self.CORRECT_KEY,
+                self.REACTION_TIME,
+                self.TIMESTAMP,
+                self.CIRCLE_APPEARED,
+                self.CIRCLE_COUNTER,
+                self.CORRECT_REACTION
+            ])
 
-            if self.__state == State.MENTAL_DEMAND:
-                self.set_state(State.DESRIPTION_END)
-            else:
-                self.set_state(State.DESCRIPTION_MENTAL_DEMAND)
-                self.__shown_stimulus = ShownStimulus.CIRCLE_WITH_NUMBERS.value
+        data_frame = data_frame.append(row_data, ignore_index=True)
+        data_frame.to_csv(self.__file, index=False)
+
+    def get_state(self):
+        return self.__state
+
+    def get_correct_number(self):
+        return self.__correct_number
+
+    def get_random_number(self):
+        return self.__current_random_number
+
+    def is_circle_shown(self):
+        return self.__is_circle
 
     def key_pressed_event(self, pressed_key):
         key_code = pressed_key.key()
 
         if self.__is_space_key(key_code):
             if self.__state == State.DESCRIPTION_SINGLE_STIMULUS:
-                self.set_state(State.START_COUNTDOWN)
-                self.start_countdown()
+                self.__state = State.INIT_CIRCLE
+                self.__start_countdown()
 
             elif self.__state == State.DESCRIPTION_MENTAL_DEMAND:
                 self.__set_condition(Condition.MENTAL_DEMAND)
-                self.set_state(State.START_COUNTDOWN)
-                self.start_countdown()
+                self.__state = State.INIT_CIRCLE
+                self.__start_countdown()
 
             elif self.__is_circle:
                 self.__end_time = datetime.now()
                 self.__write_to_csv(self.__create_row_data(key_code))  # order is important
                 self.__hide_circle()
 
-                self.__repetition_counter += 1
-                # TODO only if a circle with the correct number appears increase repetition counter?
-                self.__handle_max_repetition()
+                self.__handle_repetition_counter()
 
-            elif self.__state == State.DESRIPTION_END:
+            elif self.__state == State.DESCRIPTION_END:
                 self.__reset_study()
 
             else:
@@ -232,26 +267,3 @@ class TrialModel(QObject):
             # log every user input even if it is not a relevant key
             # was done like this because of assignment description
             # to check if the pressed key is correct
-
-    def __write_to_csv(self, row_data):
-        try:
-            data_frame = pd.read_csv(self.__file)
-        except FileNotFoundError:  # TODO misused try except
-            data_frame = pd.DataFrame(columns=[
-                self.PARTICIPANT_ID,
-                self.CONDITION,
-                self.SHOWN_STIMULUS,
-                self.PRESSED_KEY,
-                self.CORRECT_KEY,
-                self.REACTION_TIME,
-                self.TIMESTAMP,
-                self.CIRCLE_APPEARED,
-                self.CORRECT_REACTION
-            ])
-
-        data_frame = data_frame.append(row_data, ignore_index=True)
-        data_frame.to_csv(self.__file, index=False)
-
-    def __reset_study(self):
-        self.__reset_model(self.__participant_id + 1)
-        self.data_changed.emit()
