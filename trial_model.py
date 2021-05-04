@@ -9,12 +9,12 @@ from PyQt5.QtCore import QObject, pyqtSignal
 
 
 class State(Enum):
-    INIT_CIRCLE = "init circle"
-    DESCRIPTION_SINGLE_STIMULUS = "description single stimulus"
-    SINGLE_STIMULUS = "single stimulus"
-    DESCRIPTION_MENTAL_DEMAND = "description mental demand"
-    MENTAL_DEMAND = "mental demand"
-    DESCRIPTION_END = "description end"
+    INIT_CIRCLE = 1
+    DESCRIPTION_SINGLE_STIMULUS = 2
+    SINGLE_STIMULUS = 3
+    DESCRIPTION_MENTAL_DEMAND = 4
+    MENTAL_DEMAND = 5
+    DESCRIPTION_END = 6
 
 
 class Condition(Enum):
@@ -38,8 +38,8 @@ class TrialModel(QObject):
     TIMESTAMP = "timestamp"
     CIRCLE_APPEARED = "is_circle_shown"
     CIRCLE_COUNTER = "number_of_circles"
+    CORRECT_NUMBER = "is_correct_number"
     CORRECT_REACTION = "is_correct_reaction"
-    CURRENT_STATE = "current_state"
 
     INVALID_TIME = "NaN"
     MAX_REPETITION_CONDITION = 10
@@ -150,6 +150,16 @@ class TrialModel(QObject):
         # 2 - 5 sec between circle appearance
         self.__timer.start(random.randint(2000, 5000))
 
+    def __is_correct_number(self):
+        if self.__state == State.MENTAL_DEMAND \
+                and self.__correct_number == self.__current_random_number:
+            return True
+
+        elif self.__state == State.SINGLE_STIMULUS:
+            return ""
+
+        return False
+
     def __is_correct_reaction(self, is_correct_key):
         if self.__is_circle and is_correct_key:
             if self.__state == State.MENTAL_DEMAND \
@@ -192,21 +202,28 @@ class TrialModel(QObject):
         except TypeError:
             return self.INVALID_TIME
 
+    def __create_shown_stimulus_entry(self):
+        shown_stimulus_value = self.__shown_stimulus.value
+        if self.__state == State.MENTAL_DEMAND:
+            return shown_stimulus_value + " " + str(self.__current_random_number)
+
+        return shown_stimulus_value
+
     def __create_row_data(self, key_code):
         is_correct_key = self.__is_space_key(key_code)
 
         return {
             self.PARTICIPANT_ID: self.__participant_id,
             self.CONDITION: self.__condition.value,
-            self.SHOWN_STIMULUS: self.__shown_stimulus.value,
+            self.SHOWN_STIMULUS: self.__create_shown_stimulus_entry(),
             self.PRESSED_KEY: key_code,
             self.CORRECT_KEY: is_correct_key,
             self.REACTION_TIME: self.__calculate_reaction_time(),
             self.TIMESTAMP: datetime.now(),
             self.CIRCLE_APPEARED: self.__is_circle,
             self.CIRCLE_COUNTER: self.__circle_counter,
+            self.CORRECT_NUMBER: self.__is_correct_number(),
             self.CORRECT_REACTION: self.__is_correct_reaction(is_correct_key),
-            self.CURRENT_STATE: self.__state.value
         }
 
     def __write_to_csv(self, row_data):
@@ -223,8 +240,8 @@ class TrialModel(QObject):
                 self.TIMESTAMP,
                 self.CIRCLE_APPEARED,
                 self.CIRCLE_COUNTER,
-                self.CORRECT_REACTION,
-                self.CURRENT_STATE
+                self.CORRECT_NUMBER,
+                self.CORRECT_REACTION
             ])
 
         data_frame = data_frame.append(row_data, ignore_index=True)
