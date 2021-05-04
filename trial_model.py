@@ -18,8 +18,8 @@ class State(Enum):
 
 
 class Condition(Enum):
-    SINGLE_STIMULUS = "single stimulus"
-    MENTAL_DEMAND = "mental demand"
+    SINGLE_STIMULUS = "single_stimulus"
+    MENTAL_DEMAND = "mental_demand"
 
 
 class ShownStimulus(Enum):
@@ -61,7 +61,7 @@ class TrialModel(QObject):
         self.__reset_model(participant_id)
 
     def __create_log_directory(self):
-        self.__log_directory = "log"
+        self.__log_directory = "reaction_time_experiment"
 
         if not os.path.isdir(self.__log_directory):
             os.makedirs(self.__log_directory)
