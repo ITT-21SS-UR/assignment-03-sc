@@ -18,8 +18,8 @@ class State(Enum):
 
 
 class Condition(Enum):
-    SINGLE_STIMULUS = "single_stimulus"
-    MENTAL_DEMAND = "mental_demand"
+    SINGLE_STIMULUS = "single stimulus"
+    MENTAL_DEMAND = "mental demand"
 
 
 class ShownStimulus(Enum):
@@ -73,7 +73,7 @@ class TrialModel(QObject):
         self.__state = State.DESCRIPTION_SINGLE_STIMULUS
 
         self.__set_condition(Condition.SINGLE_STIMULUS)
-        self.__shown_stimulus = ShownStimulus.CIRCLE_APPEARS.value
+        self.__shown_stimulus = ShownStimulus.CIRCLE_APPEARS
         self.__repetition_counter = 0
         self.__circle_counter = 0
 
@@ -178,7 +178,7 @@ class TrialModel(QObject):
                 self.__state = State.DESCRIPTION_END
             else:
                 self.__state = State.DESCRIPTION_MENTAL_DEMAND
-                self.__shown_stimulus = ShownStimulus.CIRCLE_WITH_NUMBERS.value
+                self.__shown_stimulus = ShownStimulus.CIRCLE_WITH_NUMBERS
 
     def __reset_study(self):
         self.__reset_model(self.__participant_id + 1)
@@ -197,8 +197,8 @@ class TrialModel(QObject):
 
         return {
             self.PARTICIPANT_ID: self.__participant_id,
-            self.CONDITION: self.__condition,
-            self.SHOWN_STIMULUS: self.__shown_stimulus,
+            self.CONDITION: self.__condition.value,
+            self.SHOWN_STIMULUS: self.__shown_stimulus.value,
             self.PRESSED_KEY: key_code,
             self.CORRECT_KEY: is_correct_key,
             self.REACTION_TIME: self.__calculate_reaction_time(),
@@ -206,7 +206,7 @@ class TrialModel(QObject):
             self.CIRCLE_APPEARED: self.__is_circle,
             self.CIRCLE_COUNTER: self.__circle_counter,
             self.CORRECT_REACTION: self.__is_correct_reaction(is_correct_key),
-            self.CURRENT_STATE: self.__state
+            self.CURRENT_STATE: self.__state.value
         }
 
     def __write_to_csv(self, row_data):
