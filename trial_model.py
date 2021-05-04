@@ -8,15 +8,13 @@ from PyQt5 import QtCore
 from PyQt5.QtCore import QObject, pyqtSignal
 
 
-# Main author of this file is Claudia.
-# Sarah optimized the timers together with Claudia (__start_countdown, __show_circle, __on_timeout).
 class State(Enum):
-    INIT_CIRCLE = 1
-    DESCRIPTION_SINGLE_STIMULUS = 2
-    SINGLE_STIMULUS = 3
-    DESCRIPTION_MENTAL_DEMAND = 4
-    MENTAL_DEMAND = 5
-    DESCRIPTION_END = 6
+    INIT_CIRCLE = "init circle"
+    DESCRIPTION_SINGLE_STIMULUS = "description single stimulus"
+    SINGLE_STIMULUS = "single stimulus"
+    DESCRIPTION_MENTAL_DEMAND = "description mental demand"
+    MENTAL_DEMAND = "mental demand"
+    DESCRIPTION_END = "description end"
 
 
 class Condition(Enum):
@@ -26,7 +24,7 @@ class Condition(Enum):
 
 class ShownStimulus(Enum):
     CIRCLE_APPEARS = "circle appears"
-    CIRCLE_WITH_NUMBERS = "circle with numbers"
+    CIRCLE_WITH_NUMBERS = "circle with number"
 
 
 class TrialModel(QObject):

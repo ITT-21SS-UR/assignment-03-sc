@@ -4,8 +4,17 @@ from PyQt5 import QtGui, QtWidgets, QtCore
 
 from trial_model import TrialModel, State
 
+"""
+EVENLY WORKLOAD DISTRIBUTION
+3.1: Everyone did the task separately and Sarah combined the answers.
+3.2: Was done together and text was written in Overleaf.
+3.3: Discussing together and Claudia implemented the code.
+3.4: Everyone conducted the tests evenly.
+3.5: Discussing together and Sarah implemented the code.
+3.6: Everyone did the task separately and Sarah combined the answers.
+"""
 
-# Author of this file is Claudia.
+
 class ReactionTimeTrial(QtWidgets.QWidget):
 
     @staticmethod
