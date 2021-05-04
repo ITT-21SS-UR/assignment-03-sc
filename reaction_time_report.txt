@@ -1,0 +1,5 @@
+a short report documenting any interesting events during 
+the experiment and all limitations of your experiment that 
+you found when conducting it 
+(e.g., you forgot to explain to all participants what they had to do).
+

@@ -1,0 +1,25 @@
+participant_id,condition,shown_stimulus,pressed_key,is_correct_key,reaction_time_in_ms,timestamp,is_circle_shown,is_correct_number,is_correct_reaction
+0,mental demand,circle with number 2,32,True,3912.537,2021-05-04 12:02:44.511746,True,True,True
+0,mental demand,circle with number 2,32,True,627.836,2021-05-04 12:02:49.925156,True,True,True
+0,mental demand,circle with number 2,32,True,3115.105,2021-05-04 12:03:04.412830,True,True,True
+0,mental demand,circle with number 3,32,True,476.437,2021-05-04 12:03:09.351229,True,False,False
+0,mental demand,circle with number 2,32,True,789.801,2021-05-04 12:03:19.526779,True,True,True
+0,mental demand,circle with number 2,32,True,4453.559,2021-05-04 12:03:33.205017,True,True,True
+0,mental demand,circle with number 2,32,True,1167.814,2021-05-04 12:04:12.470663,True,True,True
+0,mental demand,circle with number 2,32,True,4011.106,2021-05-04 12:04:37.309272,True,True,True
+0,mental demand,circle with number 2,32,True,917.716,2021-05-04 12:05:10.943113,True,True,True
+0,mental demand,circle with number 2,32,True,3207.119,2021-05-04 12:05:29.805285,True,True,True
+0,mental demand,circle with number 2,32,True,1489.856,2021-05-04 12:05:42.126954,True,True,True
+0,mental demand,circle with number 1,32,True,463.014,2021-05-04 14:24:58.215140,True,True,True
+0,mental demand,circle with number 1,16777220,False,,2021-05-04 14:25:00.965966,False,True,False
+0,mental demand,circle with number 1,32,True,799.911,2021-05-04 14:25:01.846692,True,True,True
+0,mental demand,circle with number 3,76,False,,2021-05-04 14:25:06.046635,True,False,False
+0,mental demand,circle with number 1,74,False,,2021-05-04 14:25:11.422849,True,True,False
+0,mental demand,circle with number 1,32,True,2060.953,2021-05-04 14:25:12.085198,True,True,True
+0,mental demand,circle with number 1,32,True,632.552,2021-05-04 14:25:23.132878,True,True,True
+0,mental demand,circle with number 1,32,True,400.803,2021-05-04 14:26:10.102748,True,True,True
+0,mental demand,circle with number 1,32,True,457.981,2021-05-04 14:26:13.982842,True,True,True
+0,mental demand,circle with number 1,32,True,495.147,2021-05-04 14:26:17.294837,True,True,True
+0,mental demand,circle with number 1,32,True,370.726,2021-05-04 14:26:22.270808,True,True,True
+0,mental demand,circle with number 1,32,True,556.73,2021-05-04 14:26:48.206714,True,True,True
+0,mental demand,circle with number 1,32,True,444.67,2021-05-04 14:26:53.446528,True,True,True
