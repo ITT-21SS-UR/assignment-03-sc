@@ -1,0 +1,11 @@
+participant_id,condition,shown_stimulus,pressed_key,is_correct_key,reaction_time_in_ms,timestamp,is_circle_shown,number_of_circles,is_correct_number,is_correct_reaction
+6,single_stimulus,circle appears,32,True,292.014,2021-05-04 17:15:41.987972,True,1,,True
+6,single_stimulus,circle appears,32,True,330.9190000000001,2021-05-04 17:15:44.902770,True,2,,True
+6,single_stimulus,circle appears,32,True,307.62,2021-05-04 17:15:48.731046,True,3,,True
+6,single_stimulus,circle appears,32,True,238.626,2021-05-04 17:15:52.660441,True,4,,True
+6,single_stimulus,circle appears,32,True,293.371,2021-05-04 17:15:57.717560,True,5,,True
+6,single_stimulus,circle appears,32,True,292.78,2021-05-04 17:16:02.018023,True,6,,True
+6,single_stimulus,circle appears,32,True,316.132,2021-05-04 17:16:05.113766,True,7,,True
+6,single_stimulus,circle appears,32,True,324.322,2021-05-04 17:16:07.893660,True,8,,True
+6,single_stimulus,circle appears,32,True,291.156,2021-05-04 17:16:12.414272,True,9,,True
+6,single_stimulus,circle appears,32,True,325.80199999999996,2021-05-04 17:16:15.423080,True,10,,True

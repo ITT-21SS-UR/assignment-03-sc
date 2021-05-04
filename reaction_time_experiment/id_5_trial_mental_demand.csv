@@ -1,0 +1,11 @@
+participant_id,condition,shown_stimulus,pressed_key,is_correct_key,reaction_time_in_ms,timestamp,is_circle_shown,number_of_circles,is_correct_number,is_correct_reaction
+5,mental_demand,circle with number 1,32,True,380.114,2021-05-04 17:12:24.527437,True,12,True,True
+5,mental_demand,circle with number 1,32,True,409.146,2021-05-04 17:12:46.031223,True,17,True,True
+5,mental_demand,circle with number 1,32,True,398.936,2021-05-04 17:12:56.818775,True,19,True,True
+5,mental_demand,circle with number 1,32,True,540.8439999999998,2021-05-04 17:13:01.464356,True,20,True,True
+5,mental_demand,circle with number 1,32,True,429.067,2021-05-04 17:13:04.174568,True,21,True,True
+5,mental_demand,circle with number 1,32,True,352.91,2021-05-04 17:13:25.151289,True,25,True,True
+5,mental_demand,circle with number 1,32,True,435.847,2021-05-04 17:13:34.508494,True,27,True,True
+5,mental_demand,circle with number 1,32,True,462.567,2021-05-04 17:13:57.533254,True,31,True,True
+5,mental_demand,circle with number 1,32,True,447.242,2021-05-04 17:14:00.694560,True,32,True,True
+5,mental_demand,circle with number 1,32,True,418.791,2021-05-04 17:14:51.442809,True,41,True,True

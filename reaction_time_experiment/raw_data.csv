@@ -1,0 +1,125 @@
+participant_id,condition,shown_stimulus,pressed_key,is_correct_key,reaction_time_in_ms,timestamp,is_circle_shown,number_of_circles,is_correct_number,is_correct_reaction
+1,single_stimulus,circle appears,32,True,432.252,2021-05-04 15:11:22.853987,True,1,,True
+1,single_stimulus,circle appears,32,True,231.91,2021-05-04 15:11:26.655145,True,2,,True
+1,single_stimulus,circle appears,32,True,262.485,2021-05-04 15:11:31.686080,True,3,,True
+1,single_stimulus,circle appears,32,True,253.845,2021-05-04 15:11:36.676911,True,4,,True
+1,single_stimulus,circle appears,32,True,324.973,2021-05-04 15:11:40.998591,True,5,,True
+1,single_stimulus,circle appears,32,True,269.935,2021-05-04 15:11:45.218281,True,6,,True
+1,single_stimulus,circle appears,32,True,249.847,2021-05-04 15:11:49.973795,True,7,,True
+1,single_stimulus,circle appears,32,True,313.647,2021-05-04 15:11:52.910470,True,8,,True
+1,single_stimulus,circle appears,32,True,333.351,2021-05-04 15:11:55.957262,True,9,,True
+1,single_stimulus,circle appears,32,True,240.07,2021-05-04 15:11:59.212374,True,10,,True
+2,single_stimulus,circle appears,32,True,373.72900000000004,2021-05-04 15:15:57.051788,True,1,,True
+2,single_stimulus,circle appears,32,True,282.428,2021-05-04 15:16:01.331085,True,2,,True
+2,single_stimulus,circle appears,32,True,279.053,2021-05-04 15:16:04.701354,True,3,,True
+2,single_stimulus,circle appears,32,True,297.632,2021-05-04 15:16:08.520621,True,4,,True
+2,single_stimulus,circle appears,32,True,296.77,2021-05-04 15:16:12.394728,True,5,,True
+2,single_stimulus,circle appears,32,True,434.079,2021-05-04 15:16:15.382267,True,6,,True
+2,single_stimulus,circle appears,32,True,329.101,2021-05-04 15:16:20.328781,True,7,,True
+2,single_stimulus,circle appears,32,True,351.809,2021-05-04 15:16:22.898239,True,8,,True
+2,single_stimulus,circle appears,32,True,320.66,2021-05-04 15:16:26.744397,True,9,,True
+2,single_stimulus,circle appears,32,True,325.496,2021-05-04 15:16:31.750179,True,10,,True
+3,single_stimulus,circle appears,32,True,302.0610000000001,2021-05-04 16:41:26.348466,True,1,,True
+3,single_stimulus,circle appears,32,True,334.19199999999995,2021-05-04 16:41:31.058804,True,2,,True
+3,single_stimulus,circle appears,32,True,344.379,2021-05-04 16:41:34.517136,True,3,,True
+3,single_stimulus,circle appears,32,True,376.30699999999996,2021-05-04 16:41:37.347164,True,4,,True
+3,single_stimulus,circle appears,32,True,317.4890000000001,2021-05-04 16:41:40.914794,True,5,,True
+3,single_stimulus,circle appears,32,True,299.988,2021-05-04 16:41:44.296738,True,6,,True
+3,single_stimulus,circle appears,32,True,303.38599999999997,2021-05-04 16:41:47.725459,True,7,,True
+3,single_stimulus,circle appears,32,True,318.7360000000001,2021-05-04 16:41:52.742772,True,8,,True
+3,single_stimulus,circle appears,32,True,365.774,2021-05-04 16:41:55.788336,True,9,,True
+3,single_stimulus,circle appears,32,True,383.15900000000005,2021-05-04 16:41:59.802705,True,10,,True
+4,single_stimulus,circle appears,32,True,362.887,2021-05-04 16:55:37.787321,True,1,,True
+4,single_stimulus,circle appears,32,True,362.932,2021-05-04 16:55:42.787457,True,2,,True
+4,single_stimulus,circle appears,32,True,351.051,2021-05-04 16:55:46.197703,True,3,,True
+4,single_stimulus,circle appears,32,True,338.3590000000001,2021-05-04 16:55:50.510078,True,4,,True
+4,single_stimulus,circle appears,32,True,325.426,2021-05-04 16:55:54.239611,True,5,,True
+4,single_stimulus,circle appears,32,True,311.3060000000001,2021-05-04 16:55:57.734452,True,6,,True
+4,single_stimulus,circle appears,32,True,310.0010000000001,2021-05-04 16:56:00.106361,True,7,,True
+4,single_stimulus,circle appears,32,True,324.913,2021-05-04 16:56:05.274450,True,8,,True
+4,single_stimulus,circle appears,32,True,308.9120000000001,2021-05-04 16:56:09.429115,True,9,,True
+4,single_stimulus,circle appears,32,True,382.102,2021-05-04 16:56:12.128437,True,10,,True
+5,single_stimulus,circle appears,32,True,266.671,2021-05-04 17:11:41.065196,True,1,,True
+5,single_stimulus,circle appears,32,True,389.156,2021-05-04 17:11:43.509439,True,2,,True
+5,single_stimulus,circle appears,32,True,315.724,2021-05-04 17:11:48.737007,True,3,,True
+5,single_stimulus,circle appears,32,True,273.323,2021-05-04 17:11:52.693062,True,4,,True
+5,single_stimulus,circle appears,32,True,285.335,2021-05-04 17:11:56.308396,True,5,,True
+5,single_stimulus,circle appears,32,True,283.966,2021-05-04 17:11:59.181395,True,6,,True
+5,single_stimulus,circle appears,32,True,295.928,2021-05-04 17:12:02.718994,True,7,,True
+5,single_stimulus,circle appears,32,True,268.94800000000004,2021-05-04 17:12:05.690958,True,8,,True
+5,single_stimulus,circle appears,32,True,289.8590000000001,2021-05-04 17:12:08.711949,True,9,,True
+5,single_stimulus,circle appears,32,True,,2021-05-04 17:12:12.153902,False,9,,False
+5,single_stimulus,circle appears,32,True,513.8829999999998,2021-05-04 17:12:12.683364,True,10,,True
+6,single_stimulus,circle appears,32,True,292.014,2021-05-04 17:15:41.987972,True,1,,True
+6,single_stimulus,circle appears,32,True,330.9190000000001,2021-05-04 17:15:44.902770,True,2,,True
+6,single_stimulus,circle appears,32,True,307.62,2021-05-04 17:15:48.731046,True,3,,True
+6,single_stimulus,circle appears,32,True,238.62599999999998,2021-05-04 17:15:52.660441,True,4,,True
+6,single_stimulus,circle appears,32,True,293.371,2021-05-04 17:15:57.717560,True,5,,True
+6,single_stimulus,circle appears,32,True,292.78,2021-05-04 17:16:02.018023,True,6,,True
+6,single_stimulus,circle appears,32,True,316.132,2021-05-04 17:16:05.113766,True,7,,True
+6,single_stimulus,circle appears,32,True,324.322,2021-05-04 17:16:07.893660,True,8,,True
+6,single_stimulus,circle appears,32,True,291.156,2021-05-04 17:16:12.414272,True,9,,True
+6,single_stimulus,circle appears,32,True,325.802,2021-05-04 17:16:15.423080,True,10,,True
+1,mental_demand,circle with number 2,32,True,375.26099999999997,2021-05-04 15:12:05.245172,True,11,1.0,True
+1,mental_demand,circle with number 3,32,True,362.17100000000005,2021-05-04 15:12:09.409987,True,12,0.0,False
+1,mental_demand,circle with number 2,32,True,336.5680000000001,2021-05-04 15:12:18.510247,True,14,1.0,True
+1,mental_demand,circle with number 2,32,True,384.959,2021-05-04 15:12:22.808329,True,15,1.0,True
+1,mental_demand,circle with number 2,32,True,353.461,2021-05-04 15:12:54.777184,True,21,1.0,True
+1,mental_demand,circle with number 2,32,True,341.574,2021-05-04 15:13:08.364210,True,24,1.0,True
+1,mental_demand,circle with number 2,32,True,399.74699999999996,2021-05-04 15:13:11.598010,True,25,1.0,True
+1,mental_demand,circle with number 2,32,True,468.099,2021-05-04 15:13:16.644296,True,26,1.0,True
+1,mental_demand,circle with number 2,32,True,370.10699999999997,2021-05-04 15:13:28.794953,True,28,1.0,True
+1,mental_demand,circle with number 2,32,True,423.06300000000016,2021-05-04 15:13:32.571006,True,29,1.0,True
+1,mental_demand,circle with number 2,32,True,393.437,2021-05-04 15:13:47.492658,True,32,1.0,True
+2,mental_demand,circle with number 1,32,True,412.735,2021-05-04 15:16:39.110363,True,11,1.0,True
+2,mental_demand,circle with number 1,32,True,344.911,2021-05-04 15:16:47.992310,True,13,1.0,True
+2,mental_demand,circle with number 1,32,True,442.293,2021-05-04 15:16:56.664341,True,15,1.0,True
+2,mental_demand,circle with number 1,32,True,378.08,2021-05-04 15:17:01.276560,True,16,1.0,True
+2,mental_demand,circle with number 1,32,True,368.23900000000003,2021-05-04 15:17:05.792337,True,17,1.0,True
+2,mental_demand,circle with number 1,32,True,358.767,2021-05-04 15:17:09.507832,True,18,1.0,True
+2,mental_demand,circle with number 1,32,True,353.166,2021-05-04 15:17:17.500752,True,20,1.0,True
+2,mental_demand,circle with number 1,32,True,656.6460000000001,2021-05-04 15:17:30.084036,True,22,1.0,True
+2,mental_demand,circle with number 1,32,True,454.329,2021-05-04 15:17:41.877490,True,25,1.0,True
+2,mental_demand,circle with number 1,32,True,490.589,2021-05-04 15:17:51.612586,True,27,1.0,True
+3,mental_demand,circle with number 2,32,True,510.645,2021-05-04 16:42:10.931852,True,12,1.0,True
+3,mental_demand,circle with number 2,32,True,473.255,2021-05-04 16:42:13.445152,True,13,1.0,True
+3,mental_demand,circle with number 2,32,True,404.588,2021-05-04 16:42:41.424343,True,19,1.0,True
+3,mental_demand,circle with number 2,32,True,445.778,2021-05-04 16:43:03.344298,True,23,1.0,True
+3,mental_demand,circle with number 2,32,True,451.502,2021-05-04 16:43:28.323918,True,27,1.0,True
+3,mental_demand,circle with number 2,32,True,436.77099999999996,2021-05-04 16:43:32.409746,True,28,1.0,True
+3,mental_demand,circle with number 2,32,True,426.87199999999996,2021-05-04 16:43:47.849481,True,31,1.0,True
+3,mental_demand,circle with number 2,32,True,384.26599999999996,2021-05-04 16:44:15.283957,True,36,1.0,True
+3,mental_demand,circle with number 2,32,True,572.474,2021-05-04 16:45:14.170298,True,46,1.0,True
+3,mental_demand,circle with number 2,32,True,455.663,2021-05-04 16:45:40.130144,True,51,1.0,True
+4,mental_demand,circle with number 1,32,True,390.435,2021-05-04 16:56:44.362443,True,12,1.0,True
+4,mental_demand,circle with number 1,32,True,409.288,2021-05-04 16:56:47.831751,True,13,1.0,True
+4,mental_demand,circle with number 1,32,True,403.781,2021-05-04 16:56:52.428491,True,14,1.0,True
+4,mental_demand,circle with number 2,32,True,396.402,2021-05-04 16:56:56.819975,True,15,0.0,False
+4,mental_demand,circle with number 1,32,True,460.622,2021-05-04 16:57:17.509901,True,19,1.0,True
+4,mental_demand,circle with number 1,32,True,565.319,2021-05-04 16:57:33.992125,True,22,1.0,True
+4,mental_demand,circle with number 1,32,True,449.806,2021-05-04 16:57:54.121806,True,26,1.0,True
+4,mental_demand,circle with number 1,32,True,393.14,2021-05-04 16:58:17.828827,True,31,1.0,True
+4,mental_demand,circle with number 1,32,True,472.486,2021-05-04 16:58:20.393094,True,32,1.0,True
+4,mental_demand,circle with number 1,32,True,405.064,2021-05-04 16:58:29.827943,True,34,1.0,True
+4,mental_demand,circle with number 1,32,True,485.899,2021-05-04 16:58:33.908931,True,35,1.0,True
+5,mental_demand,circle with number 1,32,True,380.11400000000003,2021-05-04 17:12:24.527437,True,12,1.0,True
+5,mental_demand,circle with number 1,32,True,409.14599999999996,2021-05-04 17:12:46.031223,True,17,1.0,True
+5,mental_demand,circle with number 1,32,True,398.936,2021-05-04 17:12:56.818775,True,19,1.0,True
+5,mental_demand,circle with number 1,32,True,540.8439999999998,2021-05-04 17:13:01.464356,True,20,1.0,True
+5,mental_demand,circle with number 1,32,True,429.06699999999995,2021-05-04 17:13:04.174568,True,21,1.0,True
+5,mental_demand,circle with number 1,32,True,352.91,2021-05-04 17:13:25.151289,True,25,1.0,True
+5,mental_demand,circle with number 1,32,True,435.847,2021-05-04 17:13:34.508494,True,27,1.0,True
+5,mental_demand,circle with number 1,32,True,462.56699999999995,2021-05-04 17:13:57.533254,True,31,1.0,True
+5,mental_demand,circle with number 1,32,True,447.24199999999996,2021-05-04 17:14:00.694560,True,32,1.0,True
+5,mental_demand,circle with number 1,32,True,418.791,2021-05-04 17:14:51.442809,True,41,1.0,True
+6,mental_demand,circle with number 2,32,True,317.1860000000001,2021-05-04 17:16:22.314242,True,11,0.0,False
+6,mental_demand,circle with number 1,32,True,511.767,2021-05-04 17:16:24.933354,True,12,1.0,True
+6,mental_demand,circle with number 1,32,True,506.259,2021-05-04 17:16:27.928689,True,13,1.0,True
+6,mental_demand,circle with number 1,32,True,526.273,2021-05-04 17:16:42.073507,True,16,1.0,True
+6,mental_demand,circle with number 1,32,True,458.966,2021-05-04 17:16:47.131309,True,17,1.0,True
+6,mental_demand,circle with number 1,32,True,414.559,2021-05-04 17:16:53.836035,True,19,1.0,True
+6,mental_demand,circle with number 1,32,True,439.71900000000005,2021-05-04 17:16:58.866047,True,20,1.0,True
+6,mental_demand,circle with number 1,32,True,370.78,2021-05-04 17:17:07.794690,True,22,1.0,True
+6,mental_demand,circle with number 1,32,True,450.01800000000003,2021-05-04 17:17:27.870110,True,26,1.0,True
+6,mental_demand,circle with number 1,32,True,467.275,2021-05-04 17:17:30.513868,True,27,1.0,True
+6,mental_demand,circle with number 1,32,True,466.689,2021-05-04 17:17:43.489522,True,30,1.0,True
