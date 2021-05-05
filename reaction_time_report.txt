@@ -1,8 +1,14 @@
-With the first condition no mistaken inputs where observed, 
-but with the second condition three times the space bar was pressed 
-when the false number was displayed.
+In the first condition no wrong reactions were observed
+but in the second condition the space bar was pressed three times
+when a false number was displayed.
+Each participant made exactly one mistake in the whole study.
+It should be noted that one person participated twice in the study.
+
+Also nobody pressed an incorrect key.
 
 Further, the second run took a bit longer due to the randomly chosen 
-numbers, which caused the participants to be somewhat impatient.
-The longer duration might lead to fatigue effects, so it can not be 
+numbers which caused the participants to be somewhat impatient.
+The longer duration might lead to fatigue effects so it can not be
 excluded that this influences the reaction time.
+It was observed that 2 out of 3 participants made the mistake
+in the second run which could contribute to this effect.

@@ -1,6 +1,3 @@
-# Authors of this file are Sarah and Claudia.
-# Everyone did the task separately and Sarah combined the answers together.
-
 What does Hornbæk say about the relationship between self-reported and
 objectively measured task performance?
 
@@ -13,10 +10,9 @@ relationships between components, but it arises and remains in the mind. It
 does not matter how objective a product is, its quality must also be 
 experienced in order to cause an effect.
 
-###
 Task performance is also strongly influenced by the participant's level 
 of understanding of the task. If a participant does not understand the 
-task, it will affect the performance and the results will be of less 
+task it will affect the performance and the results will be of less
 value to the researcher.
 
 
@@ -43,7 +39,7 @@ Mentioned drawbacks / limitations of hypotheses are:
   faced with contradictory evidence.
 
 - Source for Greenwald: A. Greenwald, A. Pratkanis, M. Leippe, and M. Baumgardner, 
-  “Under whatconditions does theory obstruct research progress?,”Psychological 
+  “Under what conditions does theory obstruct research progress?,”Psychological
   review,vol. 93, no. 2, p. 216, 1986.
 
 ################################################################################
@@ -57,21 +53,20 @@ Yes, it is acceptable because student participation in a study does not matter i
 What are advantages and limitations?
 
 Advantages of using students as participants include that they are easy and inexpensive
-to recruit, have strong cognitive skills, and are accustomed to an authoritarian work style.
+to recruit, have strong cognitive skills and are accustomed to an authoritarian work style.
 
 However, it is important to note that you should check if the students are representative
 for the study if you want to generalize it. In fact, this is a limit that students are 
 not necessarily representative for a generalization to the whole population.
-At best, a study should consider different age, occupational, and social groups.
+At best, a study should consider different ages, occupational and social groups.
 
 ###
 Name one topic for a user study where it would be problematic to have only
 media informatics students as participants. 
 
-For example, if you want to evaluate a Corona app, it would not make sense to include 
-only media informatics students in a study, as they are very tech-savvy and therefore 
+For example, if you want to evaluate a Corona app it would not make sense to include
+only media informatics students in a study because they are very tech-savvy and therefore
 do not represent the general population.
-
 
 ###
 Name one counter-example. 
