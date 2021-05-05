@@ -1,5 +1,8 @@
-a short report documenting any interesting events during 
-the experiment and all limitations of your experiment that 
-you found when conducting it 
-(e.g., you forgot to explain to all participants what they had to do).
+With the first condition no mistaken inputs where observed, 
+but with the second condition three times the space bar was pressed 
+when the false number was displayed.
 
+Further, the second run took a bit longer due to the randomly chosen 
+numbers, which caused the participants to be somewhat impatient.
+The longer duration might lead to fatigue effects, so it can not be 
+excluded that this influences the reaction time.
